@@ -1,0 +1,4 @@
+package MultithreadingQuestions.ParallelDataAggregationUsingStreams;
+
+public class ParallelDataAggregationUsingStreams {
+}

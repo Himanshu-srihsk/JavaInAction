@@ -1,0 +1,4 @@
+package MultithreadingQuestions.ThreadSafeCachewithExpiryMechanism;
+
+public class ThreadSafeCachewithExpiryMechanism {
+}
