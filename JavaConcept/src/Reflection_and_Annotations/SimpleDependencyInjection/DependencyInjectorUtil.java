@@ -31,7 +31,6 @@ public class DependencyInjectorUtil {
     public static <T> T getInstance(Class<T> clazz) {
         if (!instances.containsKey(clazz)) {
             try {
-                // Use clazz.getDeclaredConstructor().newInstance() directly
                 T object = clazz.getDeclaredConstructor().newInstance();
                 injectDependencies(object);
                 instances.put(clazz, object);
