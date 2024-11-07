@@ -1,5 +1,11 @@
 package Reflection_and_Annotations.FactoryPatternwithAnnotations;
 
+/*
+Create a @Factory annotation that indicates which constructor to use when creating an instance.
+Write a factory utility that:
+Finds the constructor annotated with @Factory and uses it to instantiate objects.
+Use this to instantiate different classes based on annotations.
+ */
 public class FactoryPatternwithAnnotations {
     public static void main(String[] args) {
         Computer pc = FactoryUtil.createInstance("Reflection_and_Annotations.FactoryPatternwithAnnotations.PC","2 GB","500 GB","2.4 GHz");
