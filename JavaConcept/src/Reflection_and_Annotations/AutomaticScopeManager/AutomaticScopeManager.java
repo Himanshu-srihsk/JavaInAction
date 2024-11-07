@@ -23,3 +23,12 @@ public class AutomaticScopeManager {
        System.out.println("userPrototypeService1 hasCode:"+userPrototypeService1.hashCode() + " userPrototypeService2 hasCode:"+userPrototypeService2.hashCode());
     }
 }
+
+//User Service Displayed
+//User Service Displayed
+//userService1 == userService2 :true
+//userService1 hasCode:57494364 userService2 hasCode:57494364
+//User Prototype Service Displayed
+//User Prototype Service Displayed
+//userPrototypeService1 == userPrototypeService2 :false
+//userPrototypeService1 hasCode:1418370913 userPrototypeService2 hasCode:391359742
