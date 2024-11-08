@@ -66,20 +66,41 @@
     - Create an `AppConfig` enum for configuration settings, annotated with `@Config`.
     - Write a loader that reads configurations from a properties file and populates the enum constants.
 
+10. **Annotation-Based SQL Query Builder** 
+     - This project implements an **Annotation-Based SQL Query Builder** that uses annotations such as `@Table`, `@Column`, and `@Id` for a simple ORM-like setup. The query builder generates SQL CRUD (Create, Read, Update, Delete) statements by reading annotations from a given entity class.
+       - **SQL Query Generation**: The builder reads annotations like `@Table`, `@Column`, `@Id`, `@OneToOne`, `@OneToMany`, and `@ManyToMany` to generate SQL CRUD statements dynamically.
+       - **Supports Relationships**: It handles various relationships between entities, including:
+          - `@OneToOne`
+          - `@OneToMany`
+          - `@ManyToMany`
+          - `@Column` (Standard column mapping)
+       - **Inner Classes**: The builder can process inner classes that contain these annotations as well.
+       - **Spring Data JPA Demonstration**: This project demonstrates how annotations can simplify the mapping of database tables to Java classes, similar to how Spring Data JPA works.
+    ### To-Do:
+    - **CreateQueryBuilder**: Not yet implemented.
+    - **DeleteQueryBuilder**: Not yet implemented.
+    - **UpdateQueryBuilder**: Not yet implemented.
+    - **SelectQueryBuilder**: Completed and functional. Generates dynamic `SELECT` SQL queries based on entity annotations.
+    - **selectQuerySimulator**: To be implemented to simulate and showcase the working of the `SELECT` query builder.
+
+
 
 ---
 
 # Multithreading
 
 1. **Thread-safe Singleton Implementation**
+    ### To-Do:
     - Implement a thread-safe singleton using `synchronized` or Double-checked Locking.
 
 
 2. **Producer-Consumer Problem**
+   ### To-Do:
     - Solve the Producer-Consumer problem using `BlockingQueue` or `wait`/`notify`.
 
 
 3. **Thread Pool Implementation**
+    ### To-Do:
     - Implement a custom thread pool manager using `ExecutorService`.
 
 
@@ -88,6 +109,7 @@
 # Low-Level Design
 
 1. **Parking Lot System**
+   ### To-Do:
     - Design a parking lot system with classes, relationships, and actions for managing parking and vehicle retrieval.
 
 
