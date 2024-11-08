@@ -1,8 +1,6 @@
 package MultithreadingQuestions.ProducerConsumerProblem;
 /*
- Producer-Consumer with Variable Buffer Size
  Implement a producer-consumer model where producers add items to a shared bounded buffer and consumers remove items.
- The buffer size should be dynamically configurable, and the system should adjust in real time.
  Implement this with multiple producer and consumer threads and use wait() and notifyAll() for inter-thread communication.
 */
 import java.util.Arrays;

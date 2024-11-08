@@ -1,3 +1,5 @@
+
+
 # Reflection & Annotations
 
 1. **Annotation-based Field Validator**
@@ -101,18 +103,34 @@
 # Multithreading
 
 1. **Thread-safe Singleton Implementation**
-    ### To-Do:
-    - Implement a thread-safe singleton using `synchronized` or Double-checked Locking.
+    - Implement a thread-safe singleton using `BillPlugh` or `Double-checked Locking`.
+    - The inclusion of tests for serialization and deserialization to ensure the Singleton behaves as expected when serialized and deserialized 
+      [ThreadSafeSingletonPattern](./JavaConcept/src/MultithreadingQuestions/ThreadSafeSingletonPattern)
 
 
 2. **Producer-Consumer Problem**
-   ### To-Do:
-    - Solve the Producer-Consumer problem using `BlockingQueue` or `wait`/`notify`.
+    - Implement a producer-consumer model where producers add items to a shared bounded buffer and consumers remove items.
+    - Implement this with multiple producer and consumer threads and use wait() and notifyAll() for inter-thread communication.
+      [ProducerConsumerProblem](./JavaConcept/src/MultithreadingQuestions/ProducerConsumerProblem)
 
 
 3. **Thread Pool Implementation**
     ### To-Do:
     - Implement a custom thread pool manager using `ExecutorService`.
+
+
+4. **MultithreadedCounter**
+   - Write a program that uses multiple threads to increment a shared counter variable. Use synchronization techniques to ensure the counter’s integrity.
+   - Extend the solution to make the counter thread-safe without using synchronized.
+     [MultithreadedCounter](./JavaConcept/src/MultithreadingQuestions/MultithreadedCounter)
+
+
+5. **CyclicOrderedPrintingWithMultipleThreads**
+   - Multiple Threads are involved, each with its own start point.
+   - Incremental Progress indicates that the value printed by each thread increases according to a user-defined increment.
+   - Using IPC specifies that inter-thread communication mechanisms (like wait() and notify()) are employed for synchronization.
+
+     [CyclicOrderedPrintingWithMultipleThreads](./JavaConcept/src/MultithreadingQuestions/CyclicOrderedPrintingWithMultipleThreads)   
 
 
 ---
