@@ -1,4 +1,4 @@
-package MultithreadingQuestions.AsynchronousTaskPipeline;
+package MultithreadingQuestions.SynchronousTaskPipelineCompletetableFuture;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -17,7 +17,7 @@ public class fetchDataStage implements Stage {
 
         // Asynchronously fetching data from the file
         CompletableFuture<?> future = CompletableFuture.runAsync(() -> {
-            try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Himanshu\\Desktop\\work\\Java\\Java-2\\JavaConcept\\src\\MultithreadingQuestions\\AsynchronousTaskPipeline\\input.txt"))) {
+            try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Himanshu\\Desktop\\work\\Java\\Java-2\\JavaConcept\\src\\MultithreadingQuestions\\SynchronousTaskPipelineCompletetableFuture\\input.txt"))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     System.out.println("Data fetched: " + line);

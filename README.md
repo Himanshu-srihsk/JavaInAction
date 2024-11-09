@@ -115,8 +115,9 @@
 
 
 3. **Thread Pool Implementation**
-    ### To-Do:
-    - Implement a custom thread pool manager using `ExecutorService`.
+     ### In Progress:
+    - Implement a custom thread pool manager simmilar to `ThreadPoolExecutor`.
+      [ThreadPoolImplementation](./JavaConcept/src/MultithreadingQuestions/ThreadPoolImplementation)
 
 
 4. **MultithreadedCounter**
@@ -133,6 +134,37 @@
      [CyclicOrderedPrintingWithMultipleThreads](./JavaConcept/src/MultithreadingQuestions/CyclicOrderedPrintingWithMultipleThreads)   
 
 
+6**CustomBlockingQueueImpl**
+   - Custom Blocking Queue with Condition Variables
+   - Create a BlockingQueue implementation using Condition objects from ReentrantLock, ReadWriteLock, StampLock.
+   - use Strategy Design pattern to implement run time algorithm fo locking and synchronization
+   - Demonstrate producers adding items and consumers taking items.
+
+     [CustomBlockingQueueImpl](./JavaConcept/src/MultithreadingQuestions/CustomBlockingQueueImpl)
+
+
+7. **DeadlockSimulationandResolution**
+   - Write a program that intentionally creates a deadlock situation between two threads.
+   - After observing the deadlock, modify the code to resolve it using one or more techniques (like ordering resources, timeout, or tryLock()).
+
+     [DeadlockSimulationandResolution](./JavaConcept/src/MultithreadingQuestions/DeadlockSimulationandResolution)
+
+8. **Synchronous Task Pipeline Using CompletetableFuture**
+   - uses CompletableFuture for chaining the tasks across stages, where the fetch, process, and save stages each run in separate threads
+   - Each stage start once that stage is fully completed i.e process start once fetch is over and save Stage start onec process is over. after processs Stage it moves to final stage
+   - Fetch Stage: Reads data from a file asynchronously and passes it to the process stage.
+   - Process Stage: Processes the fetched data (e.g., transforms it to uppercase) and sends it to the save stage.
+   - Save Stage: Writes the processed data to an output file.
+
+     [SynchronousTaskPipelineCompletetableFuture](./JavaConcept/src/MultithreadingQuestions/SynchronousTaskPipelineCompletetableFuture)
+
+9. **Asynchronous Task Pipeline KAFKA **
+   ### To-Do:
+    - uses CompletableFuture for chaining the tasks across stages, where the fetch, process, and save stages each run in separate threads
+    - Fetch Data: Asynchronously fetches data from the file and puts it into the BlockingQueue. It doesn’t wait for the fetch to complete before moving to the next stage. 
+    - Process Data: Asynchronously processes data from the BlockingQueue and immediately passes it to the BlockingQueue of the save stage. 
+    - Save Data: Asynchronously consumes processed data from the BlockingQueue and saves it to the file.   
+    
 ---
 
 # Low-Level Design
@@ -140,6 +172,15 @@
 1. **Parking Lot System**
    ### To-Do:
     - Design a parking lot system with classes, relationships, and actions for managing parking and vehicle retrieval.
+
+
+2. **Task Pipeline**
+   - Task Pipeline with State Design Pattern for File Data Fetching, Processing, and Saving (Synchronous).
+   - State Design Pattern: Ensures flexible transition between the stages of data handling.
+   - Synchronous Operation: The stages execute one after another without concurrency or parallel processing.
+   -  Data Flow: Data is passed between stages using a BlockingQueue to ensure correct sequencing and avoid data loss.
+   -  File Processing: Data is fetched from a file, processed (e.g., converted to uppercase), and then saved to another file.
+      [TaskPipeline](./JavaConcept/src/LowLevelDesign/TaskPipeline)
 
 
 ---

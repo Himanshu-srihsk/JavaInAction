@@ -1,4 +1,4 @@
-package MultithreadingQuestions.AsynchronousTaskPipeline;
+package MultithreadingQuestions.SynchronousTaskPipelineCompletetableFuture;
 
 public class FinalStage implements Stage {
     @Override

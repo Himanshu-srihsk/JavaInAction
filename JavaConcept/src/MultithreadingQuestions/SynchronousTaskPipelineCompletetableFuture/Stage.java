@@ -1,4 +1,4 @@
-package MultithreadingQuestions.AsynchronousTaskPipeline;
+package MultithreadingQuestions.SynchronousTaskPipelineCompletetableFuture;
 
 interface  Stage {
      void processData(TaskPipelineContext context) throws Exception;

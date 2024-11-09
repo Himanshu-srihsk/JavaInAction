@@ -1,4 +1,4 @@
-package MultithreadingQuestions.AsynchronousTaskPipeline;
+package MultithreadingQuestions.SynchronousTaskPipelineCompletetableFuture;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

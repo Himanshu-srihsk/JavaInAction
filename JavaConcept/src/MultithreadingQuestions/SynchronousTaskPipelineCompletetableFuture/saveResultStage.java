@@ -1,4 +1,4 @@
-package MultithreadingQuestions.AsynchronousTaskPipeline;
+package MultithreadingQuestions.SynchronousTaskPipelineCompletetableFuture;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -20,7 +20,7 @@ public class saveResultStage implements Stage {
 
         CompletableFuture<Void> future = CompletableFuture.runAsync(() ->{
             try {
-                try(BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Himanshu\\Desktop\\work\\Java\\Java-2\\JavaConcept\\src\\MultithreadingQuestions\\AsynchronousTaskPipeline\\output.txt"))) {
+                try(BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Himanshu\\Desktop\\work\\Java\\Java-2\\JavaConcept\\src\\MultithreadingQuestions\\SynchronousTaskPipelineCompletetableFuture\\output.txt"))) {
                     String data;
                     while(!(data = context.getProcessToSaveQueue().take()).equals("END")){
                         writer.write(data);
