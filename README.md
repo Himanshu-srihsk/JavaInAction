@@ -174,10 +174,10 @@
       [MultithreadedFileReader](./JavaConcept/src/MultithreadingQuestions/MultithreadedFileReader)
 
 11. **ParallelFileSearch**
-   - Write a program to search for a specific keyword within multiple files in parallel. 
-   - Each thread should search one file, and the program should return a list of files where the keyword was found. 
-   - Use Future and Callable to handle tasks and collect results.
-     [ParallelFileSearch](./JavaConcept/src/MultithreadingQuestions/ParallelFileSearch)
+    - Write a program to search for a specific keyword within multiple files in parallel.
+    - Each thread should search one file, and the program should return a list of files where the keyword was found.
+    - Use Future and Callable to handle tasks and collect results.
+  [ParallelFileSearch](./JavaConcept/src/MultithreadingQuestions/ParallelFileSearch)
 
 12. **PriorityTaskScheduler**
     - 
@@ -200,14 +200,25 @@
       [TaskPipeline](./JavaConcept/src/LowLevelDesign/TaskPipeline)
    
 3. **Json Parser**
-4. **Generic Hashmap**
+4. **Custom Generic HashMap Implementation**
+    - HashMap with Collision Handling
+    - Generic Hashmap with put, get and remove methods
+      [HashmapImpl](./JavaConcept/src/LowLevelDesign/HashmapImpl)
 5. **LRU Cache**
 6. **Splitwise app**
 7. **Vending Machine**
 8. **TV**
+   - TV State Management System using State Design Pattern
+     [TV](./JavaConcept/src/LowLevelDesign/TV)
 9. **Book My show**
 10. **Elevator**
 11. **Cricbuzz live score**
+12. **Calculator Service**
+    - Advanced Calculator Service with Support for Basic and Scientific Operations
+    - Calculator service evaluates mathematical expressions with support for basic operations (+, -, *, /) 
+    - trigonometric functions (e.g., sin, cos), and parentheses.
+    - Used Command and Interpreter design patterns for flexibility and extensibility
+      [CalculatorService](./JavaConcept/src/LowLevelDesign/CalculatorService)
 
 
 ---
