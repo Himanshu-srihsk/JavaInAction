@@ -55,7 +55,7 @@
           [CustomAccessControl](./JavaConcept/src/Reflection_and_Annotations/CustomAccessControl)
 
 
-7. **Factory Pattern with Annotations -> Factory Design Pattern and simmilar to AutoWired Constructor Injection in Spring_**
+7. **Factory Pattern with Annotations -> _Factory Design Pattern and simmilar to AutoWired Constructor Injection in Spring_**
     - Define a `@Factory` annotation to indicate the constructor to use for object creation.
     - Create a factory utility that:
         - Finds the annotated constructor and instantiates the object.
@@ -134,7 +134,7 @@
      [CyclicOrderedPrintingWithMultipleThreads](./JavaConcept/src/MultithreadingQuestions/CyclicOrderedPrintingWithMultipleThreads)   
 
 
-6**CustomBlockingQueueImpl**
+6. **CustomBlockingQueueImpl**
    - Custom Blocking Queue with Condition Variables
    - Create a BlockingQueue implementation using Condition objects from ReentrantLock, ReadWriteLock, StampLock.
    - use Strategy Design pattern to implement run time algorithm fo locking and synchronization
@@ -158,13 +158,30 @@
 
      [SynchronousTaskPipelineCompletetableFuture](./JavaConcept/src/MultithreadingQuestions/SynchronousTaskPipelineCompletetableFuture)
 
-9. **Asynchronous Task Pipeline KAFKA **
+
+9. **Asynchronous Task Pipeline Similar to Producer Consumer ..**
    ### To-Do:
     - uses CompletableFuture for chaining the tasks across stages, where the fetch, process, and save stages each run in separate threads
     - Fetch Data: Asynchronously fetches data from the file and puts it into the BlockingQueue. It doesn’t wait for the fetch to complete before moving to the next stage. 
     - Process Data: Asynchronously processes data from the BlockingQueue and immediately passes it to the BlockingQueue of the save stage. 
     - Save Data: Asynchronously consumes processed data from the BlockingQueue and saves it to the file.   
-    
+   
+
+10. **MultithreadedFileReader**   
+    - Write a program to read a large file in parallel using multiple threads. 
+    - Divide the file into parts, each read by a separate thread, and then combine the results in order. 
+    - Ensure thread safety if threads need to update a shared data structure.
+      [MultithreadedFileReader](./JavaConcept/src/MultithreadingQuestions/MultithreadedFileReader)
+
+11. **ParallelFileSearch**
+   - Write a program to search for a specific keyword within multiple files in parallel. 
+   - Each thread should search one file, and the program should return a list of files where the keyword was found. 
+   - Use Future and Callable to handle tasks and collect results.
+     [ParallelFileSearch](./JavaConcept/src/MultithreadingQuestions/ParallelFileSearch)
+
+12. **PriorityTaskScheduler**
+    - 
+    - 
 ---
 
 # Low-Level Design
@@ -181,6 +198,16 @@
    -  Data Flow: Data is passed between stages using a BlockingQueue to ensure correct sequencing and avoid data loss.
    -  File Processing: Data is fetched from a file, processed (e.g., converted to uppercase), and then saved to another file.
       [TaskPipeline](./JavaConcept/src/LowLevelDesign/TaskPipeline)
+   
+3. **Json Parser**
+4. **Generic Hashmap**
+5. **LRU Cache**
+6. **Splitwise app**
+7. **Vending Machine**
+8. **TV**
+9. **Book My show**
+10. **Elevator**
+11. **Cricbuzz live score**
 
 
 ---
