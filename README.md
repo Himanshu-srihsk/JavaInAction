@@ -180,8 +180,8 @@
   [ParallelFileSearch](./JavaConcept/src/MultithreadingQuestions/ParallelFileSearch)
 
 12. **PriorityTaskScheduler**
-    - 
-    - 
+
+
 ---
 
 # Low-Level Design
@@ -205,6 +205,8 @@
     - Generic Hashmap with put, get and remove methods
       [HashmapImpl](./JavaConcept/src/LowLevelDesign/HashmapImpl)
 5. **LRU Cache**
+    - Easily adaptable cache design supporting custom eviction policies and storage backend
+      [CacheDesignImpl](./JavaConcept/src/LowLevelDesign/CacheDesignImpl)
 6. **Splitwise app**
 7. **Vending Machine**
 8. **TV**
@@ -212,6 +214,9 @@
      [TV](./JavaConcept/src/LowLevelDesign/TV)
 9. **Book My show**
 10. **Elevator**
+    ### In Progress:
+    -  Multi-Elevator System: An Extensible, Strategy-Driven Elevator Simulation with Priority Queuing
+       [Elevator](./JavaConcept/src/LowLevelDesign/Elevator)
 11. **Cricbuzz live score**
 12. **Calculator Service**
     - Advanced Calculator Service with Support for Basic and Scientific Operations
