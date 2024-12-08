@@ -19,6 +19,6 @@ public class Content implements Comparable<Content>{
 
     @Override
     public int compareTo(Content o) {
-        return this.content.compareTo(o.content);
+        return this.order - o.order;
     }
 }

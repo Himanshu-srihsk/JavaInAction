@@ -16,7 +16,8 @@ public class ThreadSafeSingleton {
         System.out.println("Instance2 hashcode " + instance2.hashCode());
         User user = new User("Himanshu", 26);
         //using Threadpool executor
-        ThreadPoolExecutor executor1 = new ThreadPoolExecutor(2,4,1, TimeUnit.SECONDS,new ArrayBlockingQueue<>(3), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());;System.out.println("Instance1 == Instance2: " + (instance1 == instance2));
+        ThreadPoolExecutor executor1 = new ThreadPoolExecutor(2,4,1, TimeUnit.SECONDS,new ArrayBlockingQueue<>(3), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
+        System.out.println("Instance1 == Instance2: " + (instance1 == instance2));
         try {
           for(int i=0;i<10;i++){
               executor1.submit(() -> {

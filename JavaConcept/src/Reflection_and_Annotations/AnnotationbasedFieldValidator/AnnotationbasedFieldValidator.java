@@ -15,3 +15,7 @@ public class AnnotationbasedFieldValidator {
         validator.validate(user);
     }
 }
+/*
+Validation failed for name: This field cannot be null
+Validation failed for email: This field cannot be null
+ */

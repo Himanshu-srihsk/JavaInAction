@@ -16,3 +16,7 @@ public class CustomSerializationUtility {
        System.out.println("Serialized JSON: " +userJson);
     }
 }
+
+/*
+Serialized JSON: {"pincode": "560011", "city": "Bangalore", "name": "Himanshu", "age": "26"}
+ */
