@@ -105,25 +105,29 @@
 1. **Thread-safe Singleton Implementation**
     - Implement a thread-safe singleton using `BillPlugh` or `Double-checked Locking`.
     - The inclusion of tests for serialization and deserialization to ensure the Singleton behaves as expected when serialized and deserialized 
+      
       [ThreadSafeSingletonPattern](./JavaConcept/src/MultithreadingQuestions/ThreadSafeSingletonPattern)
 
 
 2. **Producer-Consumer Problem**
     - Implement a producer-consumer model where producers add items to a shared bounded buffer and consumers remove items.
     - Implement this with multiple producer and consumer threads and use wait() and notifyAll() for inter-thread communication.
-      [ProducerConsumerProblem](./JavaConcept/src/MultithreadingQuestions/ProducerConsumerProblem)
+      
+     [ProducerConsumerProblem](./JavaConcept/src/MultithreadingQuestions/ProducerConsumerProblem)
 
 
 3. **Thread Pool Implementation**
      ### In Progress:
     - Implement a custom thread pool manager simmilar to `ThreadPoolExecutor`.
-      [ThreadPoolImplementation](./JavaConcept/src/MultithreadingQuestions/ThreadPoolImplementation)
+     
+   [ThreadPoolImplementation](./JavaConcept/src/MultithreadingQuestions/ThreadPoolImplementation)
 
 
 4. **MultithreadedCounter**
    - Write a program that uses multiple threads to increment a shared counter variable. Use synchronization techniques to ensure the counter’s integrity.
    - Extend the solution to make the counter thread-safe without using synchronized.
-     [MultithreadedCounter](./JavaConcept/src/MultithreadingQuestions/MultithreadedCounter)
+     
+    [MultithreadedCounter](./JavaConcept/src/MultithreadingQuestions/MultithreadedCounter)
 
 
 5. **CyclicOrderedPrintingWithMultipleThreads**
@@ -171,15 +175,69 @@
     - Write a program to read a large file in parallel using multiple threads. 
     - Divide the file into parts, each read by a separate thread, and then combine the results in order. 
     - Ensure thread safety if threads need to update a shared data structure.
-      [MultithreadedFileReader](./JavaConcept/src/MultithreadingQuestions/MultithreadedFileReader)
+      
+     [MultithreadedFileReader](./JavaConcept/src/MultithreadingQuestions/MultithreadedFileReader)
 
 11. **ParallelFileSearch**
     - Write a program to search for a specific keyword within multiple files in parallel.
     - Each thread should search one file, and the program should return a list of files where the keyword was found.
     - Use Future and Callable to handle tasks and collect results.
-  [ParallelFileSearch](./JavaConcept/src/MultithreadingQuestions/ParallelFileSearch)
+    
+      [ParallelFileSearch](./JavaConcept/src/MultithreadingQuestions/ParallelFileSearch)
 
 12. **PriorityTaskScheduler**
+    ### To-Do:
+
+13. **ThreadSafeCachewithExpiryMechanism**
+    - Thread-safe Cache with Expiry Mechanism 
+    - Design a thread-safe cache with the following properties:
+    - Each item in the cache has a time-to-live (TTL) value. 
+    - Expired items should be removed automatically without blocking the main operation. 
+    - Multiple threads should be able to read and write to the cache simultaneously. 
+    - Implement this using ConcurrentHashMap and ScheduledExecutorService for expiration handling.
+      
+      [ThreadSafeCachewithExpiryMechanism](./JavaConcept/src/MultithreadingQuestions/ThreadSafeCachewithExpiryMechanism)
+
+15. **Parallel Data Aggregation:**
+    - Calculate aggregate metrics (e.g., sum, average) on large datasets using parallel streams.
+    - Experiment with different stream operations to optimize performance.
+    - Measure and compare performance differences between parallel and sequential streams.
+    
+      [ParallelDataAggregationUsingStreams](./JavaConcept/src/MultithreadingQuestions/ParallelDataAggregationUsingStreams)
+
+    **Examples2:**
+    - Calculate the total salary of all employees.
+    - Calculate the average salary in each department.
+    - Find the oldest employee in each department.
+    - Find the highest-paid employee in the organization.
+         
+      [ParallelDataAggregationUsingStream2](./JavaConcept/src/MultithreadingQuestions/ParallelDataAggregationUsingStreams)
+
+16. **ForkJoinPoolQuestions**
+    **Example 1: Recursive Merge Sort**
+      - Implements the merge sort algorithm using ForkJoinPool.
+      - Divides the array into smaller segments, sorts them recursively, and merges the results.
+      - Demonstrates the efficiency of parallel processing for sorting large datasets
+        
+       [RecursiveArraySorting](./JavaConcept/src/MultithreadingQuestions/ForkJoinPoolQuestions)
+    
+    **Example 2: Recursive Array Sum**
+      - Calculates the sum of array elements using ForkJoinPool.
+      - Splits the array into smaller segments, computes the sum recursively, and combines the results.
+      - Highlights the benefits of parallel computation for aggregating data.
+      
+       [RecursiveSumOfArray](./JavaConcept/src/MultithreadingQuestions/ForkJoinPoolQuestions)
+
+17. **CyclicBarrierWithCustomActions**
+     ### To-Do:
+       - Build a custom version of CyclicBarrier that allows threads to wait at a barrier until a certain number of threads reach it. 
+       - Add a feature where, once the barrier is reached, a specified action (e.g. printing a message or resetting some variables) is performed.
+
+18. **BuildFaultTolerantMessageQueue**
+    ### To-Do:
+      - Design a simple message queue that supports basic operations like enqueue, dequeue, and ack. 
+      - Use multiple threads to simulate producers and consumers. 
+      - Add fault tolerance so that if a message is dequeued but not acknowledged, it is re-queued for another attempt.
 
 
 ---
@@ -227,3 +285,10 @@
 
 
 ---
+# Java8 Stream
+
+1. Java Stream part 1
+   [JavaStream](./JavaConcept/src/Stream)
+
+2. Java Stream part 2
+   [JavaStream2](./JavaConcept/src/Stream/JavaStream2)
