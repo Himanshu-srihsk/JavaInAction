@@ -40,6 +40,7 @@ public class CalculatorServiceTest {
         Assertion.assertThrows(ArithmeticException.class, () -> {
             calculatorService.divide(10, 0);
         });
+
     }
 
 }

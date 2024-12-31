@@ -61,5 +61,37 @@ public class JavaStream2 {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
         System.out.println(list.stream().limit(3).collect(Collectors.toList()));
 
+        List<List<Integer>> arr =Arrays.asList(Arrays.asList(1,2,3), Arrays.asList(-2,0,5,7), Arrays.asList(-3,4,6,8,9));
+        List<Integer> ans = arr.stream().flatMap(e -> e.stream()).sorted((a,b) -> b-a).collect(Collectors.toList());
+        System.out.println("ans is "+ ans);
+
+        Map<Integer,String> map = Map.ofEntries(Map.entry(1,"Banana"),Map.entry(2,"Apple"),Map.entry(3,"Orange"),Map.entry(4,"Mango"));
+        System.out.println("unSorted map "+ map );
+
+//        Map<Integer,String> treemap = new TreeMap<>((x,y) -> x.compareTo(y));
+//        map.forEach((k,v) -> treemap.put(k,v));
+//        System.out.println("Sorted map "+ treemap );
+
+        List<Map.Entry<Integer,String>> cc  = map.entrySet().stream().sorted((a,b)->  a.getValue().compareTo(b.getValue())).collect(Collectors.toList());
+        System.out.println("Sorted List "+ cc );
+        Map<Integer,String> ccMap = new LinkedHashMap<>();
+        for(var entry: cc){
+            ccMap.put(entry.getKey(),entry.getValue());
+        }
+        Map<Integer, String> ccMap1 = cc.stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldVal, newVal) -> oldVal,
+                        LinkedHashMap::new
+                ));
+
+        System.out.println("Sorted List ccMap "+ ccMap );
+        System.out.println("Sorted List ccMap "+ ccMap1 );
+
+        Map<Integer,String> ccMap2 = map.entrySet().stream().sorted((a,b) -> a.getValue().compareTo(b.getValue()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldVal,newVal) -> newVal, () -> new LinkedHashMap<>()));
+
+        System.out.println("Sorted List ccMap "+ ccMap2 );
     }
 }

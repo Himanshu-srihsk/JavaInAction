@@ -41,7 +41,6 @@ public class FileSerachTask implements Callable<String> {
             System.out.println("completed Reading " + filePath + " Reader name is "+ Thread.currentThread().getName() + " Search query is is "+ searchTerm);
             fileReader.close();
         }
-
         return null;
     }
 }
