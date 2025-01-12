@@ -96,6 +96,28 @@
     - **SelectQueryBuilder**: Completed and functional. Generates dynamic `SELECT` SQL queries based on entity annotations.
     - **selectQuerySimulator**: To be implemented to simulate and showcase the working of the `SELECT` query builder.
 
+11. **Custom Annotation Processor for Immutable Classes**
+    ### To-Do:
+      - Define an annotation @Immutable and apply it to classes that should be immutable.
+      - Write a processor that:
+      - Inspects all fields of a class marked with @Immutable.
+      - Checks if all fields are final and of immutable types (like String, Integer).
+      - If a field is mutable or not final, print an error indicating the class violates immutability.
+
+
+12. **Enum Reflection Utility**
+    ### To-Do:
+    - Write a utility that, given any enum class, can print all enum constants:
+    - Invoke any method on the enum constants using reflection.
+
+
+13. **Custom Logger Annotation**
+    ### To-Do:
+    - Define an annotation @LogExecutionTime that can be applied to methods:
+    - Create an interceptor utility that.
+      - Uses reflection to find methods annotated with @LogExecutionTime
+      - When such a method is invoked, log its execution time.
+    - Apply this to methods in a test class to see execution timing for each
 
 
 ---
@@ -239,6 +261,26 @@
       - Use multiple threads to simulate producers and consumers. 
       - Add fault tolerance so that if a message is dequeued but not acknowledged, it is re-queued for another attempt.
 
+19. **Simulate a Multithreaded Stock Price Monitoring System**
+    ### To-Do:
+20. **Simulate a Bank Transaction System**
+    ### To-Do:
+     - Implement a bank transaction system where multiple threads represent users who transfer money between accounts.
+     - Ensure thread safety to prevent issues such as inconsistent balances or lost updates.
+     - Add a daily report feature that calculates the total money in all accounts without affecting transactions
+21. **Implement a Multi-threaded Web Crawler**
+    ### To-Do:
+    - Design a simple web crawler that accepts a URL and crawls all pages linked from the initial URL up to a specified depth.
+    - Use a thread-safe data structure to keep track of visited URLs and avoid duplicate work.
+    - Use multiple threads to speed up the crawling process and implement a throttling mechanism to avoid overloading the server.
+
+22.  **Implement a Rate Limiter**
+     ### To-Do:
+      - Design a rate limiter class that limits the number of requests a user can make within a certain time window (e.g., 10 requests per second).
+      - The class should allow concurrent requests from multiple threads and block requests that exceed the allowed limit.
+      - Use multithreading and synchronization to ensure thread safety.
+    
+
 
 ---
 
@@ -258,24 +300,39 @@
       [TaskPipeline](./JavaConcept/src/LowLevelDesign/TaskPipeline)
    
 3. **Json Parser**
+   ### To-Do:
+
+
 4. **Custom Generic HashMap Implementation**
     - HashMap with Collision Handling
     - Generic Hashmap with put, get and remove methods
       [HashmapImpl](./JavaConcept/src/LowLevelDesign/HashmapImpl)
+
 5. **LRU Cache**
     - Easily adaptable cache design supporting custom eviction policies and storage backend
       [CacheDesignImpl](./JavaConcept/src/LowLevelDesign/CacheDesignImpl)
+
 6. **Splitwise app**
+   ### To-Do:
+
 7. **Vending Machine**
+   ### To-Do:
+
 8. **TV**
    - TV State Management System using State Design Pattern
      [TV](./JavaConcept/src/LowLevelDesign/TV)
+
 9. **Book My show**
+   ### To-Do:
+
 10. **Elevator**
     ### In Progress:
     -  Multi-Elevator System: An Extensible, Strategy-Driven Elevator Simulation with Priority Queuing
        [Elevator](./JavaConcept/src/LowLevelDesign/Elevator)
+
 11. **Cricbuzz live score**
+    ### To-Do:
+
 12. **Calculator Service**
     - Advanced Calculator Service with Support for Basic and Scientific Operations
     - Calculator service evaluates mathematical expressions with support for basic operations (+, -, *, /) 
@@ -283,6 +340,53 @@
     - Used Command and Interpreter design patterns for flexibility and extensibility
       [CalculatorService](./JavaConcept/src/LowLevelDesign/CalculatorService)
 
+13. **Snake and Ladder**
+    ### To-Do:
+
+14. **Tic Tace Toe**
+    ### To-Do:
+
+15. **Design Logging System**
+    ### To-Do:
+
+16. **File and Directory System**
+    ### To-Do:
+
+17. **Meeting Room Booking Service**
+    ### To-Do:
+
+18. **Locker Management System**
+    ### To-Do:
+
+19. **Trello Application**
+    ### To-Do:
+
+20. **Design Twitter LLD**
+    ### To-Do:
+
+21. **Design Online Code Platform**
+    ### To-Do:
+
+22. **Design Consistent Hashing**
+    ### To-Do:
+
+23. **Design Google Authenticator**
+    ### To-Do:
+
+24. **Design Music Stream service**
+    ### To-Do:
+
+25. **Quad Tree Design implemetation**
+    ### To-Do:
+
+26. **Design Torrent**
+    ### To-Do:
+
+27. **Design Online Code Platform**
+    ### To-Do:
+
+28. **Design Traffic Signal System**
+    ### To-Do:
 
 ---
 # Java8 Stream
