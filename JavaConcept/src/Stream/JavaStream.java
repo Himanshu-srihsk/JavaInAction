@@ -275,7 +275,8 @@ public class JavaStream {
        //Filter the list based on custom index-based criteria (e.g., even indices).
         List<String> sublist = IntStream.range(0, strings.size())
                 .filter(i -> i % 2 == 0) // Even indices
-                .mapToObj(strings::get)
+                 .mapToObj(strings::get)
+              //  .mapToObj(i -> strings.get(i))
                 .collect(Collectors.toList());
         System.out.println(sublist); // Output: [apple, cherry, elderberry]
 

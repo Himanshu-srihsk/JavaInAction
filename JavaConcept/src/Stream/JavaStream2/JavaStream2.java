@@ -93,5 +93,16 @@ public class JavaStream2 {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldVal,newVal) -> newVal, () -> new LinkedHashMap<>()));
 
         System.out.println("Sorted List ccMap "+ ccMap2 );
+
+
+        String test = "testing trails";
+        Map<Character,Long> freqMap = test.chars().mapToObj(e-> (char)e).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        List<Map.Entry<Character,Long>> freqMapSorted = freqMap.entrySet().stream().sorted((a,b) -> b.getValue().compareTo(a.getValue())).collect(Collectors.toList());
+        System.out.println("freqMap="+freqMap);
+
+
+        System.out.println("freqMapSorted="+freqMapSorted);
+
+
     }
 }
