@@ -1,29 +1,11 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+# Ignore everything
+*
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# Allow JavaConcept directory
+!JavaConcept/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Allow README.md
+!README.md
 
-### VS Code ###
-.vscode/
-
-### Mac OS ###
-.DS_Store
+# Ensure .gitignore itself is not ignored
+!.gitignore
