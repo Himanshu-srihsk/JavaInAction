@@ -22,15 +22,19 @@ public class JavaStream3 {
         StringBuilder s = new StringBuilder();
         String k = s.append("Ram").reverse().toString();
         System.out.println("k is " + k);
+        System.out.println("s is" + s.toString());
         s.reverse();
         System.out.println("s is" + s.toString());
         String s1 = "Ram";
         String s2 = "Ra";
         System.out.println("compare = " + s1.compareTo(s2));
 
-        Map<Character, Long> countMp = s1.chars().mapToObj(e -> (char) e).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        String s3 = "Raman";
+
+        Map<Character, Long> countMp = s3.chars().mapToObj(e -> (char) e).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         String ans1 = countMp.entrySet().stream().sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue())).map(e -> String.valueOf(e.getKey()).repeat(e.getValue().intValue())).collect(Collectors.joining());
-      int[] piles = {1,4,2,5,3};
+        System.out.println("ans1 is "+ans1);
+        int[] piles = {1,4,2,5,3};
         piles = Arrays.stream(piles).boxed().sorted((a,b)->(b-a)).mapToInt(e -> e.intValue())
                 .toArray();
         System.out.println(Arrays.toString(piles));
@@ -39,6 +43,12 @@ public class JavaStream3 {
         int[] array = {10, 12, 4, 5, 3, 2, 7, 9};
         List<Integer> even= Arrays.stream(array).boxed().filter(e-> e%2==0).map(e-> e*2).collect(Collectors.toList());
         System.out.println("even is "+even);
+
+
+        List<Integer> numbers = Arrays.asList(20,10,1,2,4,6,3,7,8);
+        List<Integer> sqOddNo = numbers.stream().filter(e->e%2!=0).map(x-> x*x).collect(Collectors.toList());
+        System.out.println("SqOddNo is "+sqOddNo.toString());
+
 
     }
 

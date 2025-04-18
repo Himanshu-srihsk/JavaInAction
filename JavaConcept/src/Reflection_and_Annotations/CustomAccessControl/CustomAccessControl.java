@@ -24,7 +24,7 @@ public class CustomAccessControl {
            }finally {
                UserContext.clearUserRole();
            }
-       });
+       },"User Thread");
 
         Thread t2 = new Thread(()->{
             try {
@@ -37,7 +37,7 @@ public class CustomAccessControl {
             }finally {
                 UserContext.clearUserRole();
             }
-        });
+        }, " Admin Thread");
 
 
         Thread t3 = new Thread(()->{
@@ -51,7 +51,7 @@ public class CustomAccessControl {
             }finally {
                 UserContext.clearUserRole();
             }
-        });
+        }, "Guest Thread");
 
         t1.start();
         t2.start();

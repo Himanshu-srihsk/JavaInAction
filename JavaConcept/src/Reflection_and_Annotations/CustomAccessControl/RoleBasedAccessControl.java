@@ -24,6 +24,7 @@ public class RoleBasedAccessControl {
                    }
 
                }else{
+                   // Anyone can access
                    method.invoke(object,args);
                }
            }

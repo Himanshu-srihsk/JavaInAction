@@ -1,7 +1,7 @@
 package Reflection_and_Annotations.AnnotationbasedFieldValidator;
 
 public class User {
-    @NotNull
+    @NotNull(message = "Name Field should not be null")
     private String name;
     @NotNull
     private String email;

@@ -13,7 +13,7 @@ public class FactoryUtil {
                     .findFirst()
                     .orElseThrow(()-> new RuntimeException("No @Factory constructor found in class " + typeClass.getName()));
             factoryConstructor.setAccessible(true);
-            return (T) factoryConstructor.newInstance(args);
+            return typeClass.cast(factoryConstructor.newInstance(args));
         }catch (ClassNotFoundException e){
              throw new RuntimeException("Class not found", e);
         }

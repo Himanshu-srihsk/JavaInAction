@@ -1,6 +1,5 @@
 package Stream;
 
-import javax.xml.crypto.Data;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.function.Function;
@@ -180,14 +179,13 @@ class Employee{
     private List<Seat> seats;
     private List<Integer> ratings;
 
-    // Constructor
     public Concert(String concertName, List<Seat> seats) {
         this.concertName = concertName;
         this.seats = seats;
         this.ratings = new ArrayList<>();
     }
 
-    // Add a rating
+
     public void addRating(int rating) {
         if (rating >= 1 && rating <= 5) { // Assuming ratings are between 1 and 5
             ratings.add(rating);
@@ -243,7 +241,6 @@ public class JavaStream {
         System.out.println("Stream Sorted array is"+ Arrays.toString(Arrays.stream(nums.clone()).sorted().toArray()));
 
         String str = "Hello World";
-
         System.out.println("Duplicate Characters in String is: ");
 
        Map<Character, Long> charVsCountMap = str.chars().mapToObj(e->(char)e).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
@@ -252,6 +249,7 @@ public class JavaStream {
         System.out.println("Duplicate keys in str :" + str +" is "+ duplicates);
 
         int[] arr= {23,24,12,33,45};
+
         System.out.println("2nd Largest keys in arr :" + Arrays.toString(arr) +" is "+ Arrays.stream(arr).boxed().sorted((a,b) -> b-a).skip(1).limit(1).findFirst().get());
 
         List<String> words = Arrays.asList("CARS", "REPAID", "DUES", "NOSE", "SIGNED",
@@ -314,6 +312,8 @@ public class JavaStream {
         System.out.println("String formed using String is"+ ss);
 
         int[] arr1 = { -8, -3, -6, -2, -5, -4 };
+
+
         int maxElem = Arrays.stream(arr1).max().getAsInt();
         System.out.println("Maxium ELemenet in arrr:"+ Arrays.toString(arr1) + " is "+ maxElem);
 
@@ -333,6 +333,7 @@ public class JavaStream {
             map.putIfAbsent(x,new DataObj(index,x,0));
             map.get(x).count++;
         }
+
         List<DataObj> DataObjs = map.entrySet().stream().map(Map.Entry::getValue).collect(Collectors.toList());
         List<DataObj> sortedByFreqDataObjs = DataObjs.stream().sorted((p,q) -> {
             if(q.count!=p.count){
@@ -355,7 +356,6 @@ public class JavaStream {
                 {"LHR", "DFW"},
                 {"JFK", "LAX"}
         };
-
         Map<String,String> inputMap = Arrays.stream(input).collect(Collectors.toMap(p-> p[0], p -> p[1]));
         inputMap.forEach((k,v) -> System.out.println("Key is "+ k+" val is "+v));
 
@@ -388,6 +388,10 @@ public class JavaStream {
         List<Integer> reveresedList = IntStream.rangeClosed(1,list.size()).mapToObj(i-> list.get(list.size()-i)).collect(Collectors.toList());
         System.out.println("reveresedList is "+ reveresedList);
 
+        List<Integer> reversedList1 = new ArrayList<>(list);
+        Collections.reverse(reversedList1);
+        System.out.println("reversedList1 is "+ reversedList1);
+
         List<Flight> flights = new ArrayList<>();
         flights.add(new Flight("AI101", "New York", "London",
                 LocalDateTime.of(2024, 12, 1, 10, 30),
@@ -399,6 +403,7 @@ public class JavaStream {
         String source = "New York";
         String destination = "London";
         LocalDateTime searchDate = LocalDateTime.of(2024, 12, 1, 0, 0);
+
 
         List<Flight> searchedFlightResults = flights.stream().filter(f -> f.getSource().equalsIgnoreCase(source)
                 && f.getDestination().equalsIgnoreCase(destination) && f.getDepartureTime().toLocalDate().equals(searchDate.toLocalDate())

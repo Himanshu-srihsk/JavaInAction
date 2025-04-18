@@ -16,9 +16,11 @@ public class JavaStream2 {
           }
       };
     }
+
     public static void main(String[] args) {
 
         List<String> numbers = List.of("1", "2", "a", "4");
+
         List<Integer> parsedNumbers = numbers.stream().map(num -> {
             try {
                 return Integer.parseInt(num);
@@ -37,13 +39,12 @@ public class JavaStream2 {
 
         //Use a Wrapper Method for Exception Handling
         List<Integer> parsedNumbers1 = numbers.stream().map(handleException(Integer::parseInt)).filter(Objects::nonNull).collect(Collectors.toList());
-
         System.out.println("Parsed Integers1:"+ parsedNumbers1);
 
         List<String> sentences = Arrays.asList("Java is fun", "Streams are powerful");
         String joinedWords  = sentences.stream().flatMap(s -> Stream.of(s.split(" "))).collect(Collectors.joining());
-        System.out.println("joinedWords is "+joinedWords);//JavaisfunStreamsarepowerful
 
+        System.out.println("joinedWords is "+joinedWords);//JavaisfunStreamsarepowerful
         Stream.Builder<Integer> streamBuilder = Stream.builder();
         Stream<Integer> abc = streamBuilder.add(100).add(200).add(300).build();
 //        int[] abcArray = abc.mapToInt(Integer::intValue).toArray();
@@ -94,6 +95,29 @@ public class JavaStream2 {
 
         System.out.println("Sorted List ccMap "+ ccMap2 );
 
+        List<Map.Entry<Integer, String>> listw = List.of(
+                Map.entry(1, "One"),
+                Map.entry(2, "Two"),
+                Map.entry(1, "Uno")  // duplicate key
+        );
+
+        Map<Integer, String> mapw = listw.stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldVal, newVal) -> oldVal,
+                        LinkedHashMap::new
+                ));
+        System.out.println("mapw map is "+ mapw ); //mapw map is {1=One, 2=Two}
+
+        Map<Integer, String> mapwn = listw.stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldVal, newVal) -> newVal,
+                        LinkedHashMap::new
+                ));
+        System.out.println("mapwn map is "+ mapwn ); //mapwn map is {1=Uno, 2=Two}
 
         String test = "testing trails";
         Map<Character,Long> freqMap = test.chars().mapToObj(e-> (char)e).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
