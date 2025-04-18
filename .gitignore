@@ -1,8 +1,9 @@
 # Ignore everything
 *
 
-# Allow JavaConcept directory
+# Allow JavaConcept directory and everything inside it
 !JavaConcept/
+!JavaConcept/**
 
 # Allow README.md
 !README.md
