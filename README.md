@@ -119,6 +119,11 @@
       - When such a method is invoked, log its execution time.
     - Apply this to methods in a test class to see execution timing for each
 
+14. **Question Bank Filter**
+    - Define an annotation @Questions that can be applied to methods:
+    - it contains attributes like topic and difficulty 
+    - Filter the Questions dynamically at run time based on topic or difficulty level provided
+
 
 ---
 
@@ -387,6 +392,13 @@
 
 28. **Design Traffic Signal System**
     ### To-Do:
+
+29. **Ecommerce Filter and Pricing Logic**
+    - Design an extensible filtering system for an e-commerce platform that allows dynamic filtering of products 
+    - based on attributes like category, brand, and price using the **Interpreter design pattern.** 
+    - Additionally, calculate the total price of the filtered products using the **Visitor pattern.** 
+    - The system should support flexible combinations of filter conditions (AND, OR) and be open for future enhancements like discount logic,
+      new filters, or operations.
 
 ---
 # Java8 Stream
