@@ -1,5 +1,7 @@
 package LowLevelDesign.EcommerceFilterDemo;
 
+import java.util.Objects;
+
 public class Product {
     private String name;
     private String category;
@@ -37,5 +39,27 @@ public class Product {
                 ", category='" + category + '\'' +
                 ", price=" + price +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o){
+      if(this == o){
+          return true;
+      }
+      if(o==null || o.getClass()!=this.getClass()){
+          return false;
+      }
+      Product p = (Product) o;
+      return Double.compare(p.price,this.price) == 0
+              && Objects.equals(p.name,this.name)
+              && Objects.equals(p.category,this.category)
+              && Objects.equals(p.brand,this.brand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, category, brand, price);
+    }
+    public void accept(TotalPriceVisitor visitor){
+        visitor.visit(this);
     }
 }
