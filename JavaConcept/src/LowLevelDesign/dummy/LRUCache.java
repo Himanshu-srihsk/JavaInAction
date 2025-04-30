@@ -14,21 +14,21 @@ public class LRUCache<K, V> {
 
     public V get(K key) {
         if (!cache.containsKey(key)) {
-            return null; // Key not found
+            return null;
         }
         Node<K, V> node = cache.get(key);
-        dll.moveToHead(node); // Mark as recently used
+        dll.moveToHead(node);
         return node.value;
     }
 
     public void put(K key, V value) {
         if (cache.containsKey(key)) {
             Node<K, V> node = cache.get(key);
-            node.value = value; // Update value
-            dll.moveToHead(node); // Mark as recently used
+            node.value = value;
+            dll.moveToHead(node);
         } else {
             if (cache.size() == capacity) {
-                Node<K, V> tail = dll.removeTail(); // Remove least recently used
+                Node<K, V> tail = dll.removeTail();
                 cache.remove(tail.key);
             }
             Node<K, V> newNode = new Node<>(key, value);
@@ -37,7 +37,7 @@ public class LRUCache<K, V> {
         }
     }
 
-    // Helper class for Doubly Linked List Node
+
     static class Node<K, V> {
         K key;
         V value;
