@@ -246,19 +246,36 @@
       - Divides the array into smaller segments, sorts them recursively, and merges the results.
       - Demonstrates the efficiency of parallel processing for sorting large datasets
         
-       [RecursiveArraySorting](./JavaConcept/src/MultithreadingQuestions/ForkJoinPoolQuestions)
+       [RecursiveArraySorting](./JavaConcept/src/MultithreadingQuestions/ForkJoinPoolQuestions/RecursiveArraySorting)
     
     **Example 2: Recursive Array Sum**
       - Calculates the sum of array elements using ForkJoinPool.
       - Splits the array into smaller segments, computes the sum recursively, and combines the results.
       - Highlights the benefits of parallel computation for aggregating data.
       
-       [RecursiveSumOfArray](./JavaConcept/src/MultithreadingQuestions/ForkJoinPoolQuestions)
+       [RecursiveSumOfArray](./JavaConcept/src/MultithreadingQuestions/ForkJoinPoolQuestions/RecursiveSumOfArray)
 
 17. **CyclicBarrierWithCustomActions**
-     ### To-Do:
+    **Example 1: Cyclic Barrier example**
+       - Implement a Cyclic Barrier with Custom Actions 
+       - Add a feature where, once the barrier is reached, a specified action (ex: printing a message) is performed.
+        
+       [CyclicBarrierEx1](./JavaConcept/src/MultithreadingQuestions/CyclicBarrierWithCustomActions/CyclicBarrierEx1)
+    
+    **Example 1: Custom Cyclic Barrier Implementaion**
+       - Implement a Cyclic Barrier with Custom Actions 
        - Build a custom version of CyclicBarrier that allows threads to wait at a barrier until a certain number of threads reach it. 
-       - Add a feature where, once the barrier is reached, a specified action (e.g. printing a message or resetting some variables) is performed.
+       - Add a feature where, once the barrier is reached, a specified action (ex: printing a message or resetting some variables) is performed.
+       
+       [CustomCyclicBarrierEx2](./JavaConcept/src/MultithreadingQuestions/CyclicBarrierWithCustomActions/CustomCyclicBarrierEx2)
+       
+    **Example 3: MapReduceWithCyclicBarrier**
+      - Suppose you are processing a large file in multiple chunks using 4 threads. 
+      - each thread finishes processing its chunk, Performs Map phase -> build a local Map<String, Integer> word To Count while Ignores stop words
+      - all threads must synchronize to combine the results or proceed to the next stage together i.e. to perform reduce Phase. A CyclicBarrier ensures all threads reach this merge point before moving on.
+      - The barrier’s action combines all partial maps → performs Reduce phase and output map sorted by count in desc
+        
+      [MapReduceWithCyclicBarrier](./JavaConcept/src/MultithreadingQuestions/CyclicBarrierWithCustomActions/MapReduceWithCyclicBarrier)
 
 18. **BuildFaultTolerantMessageQueue**
     ### To-Do:
@@ -268,6 +285,7 @@
 
 19. **Simulate a Multithreaded Stock Price Monitoring System**
     ### To-Do:
+
 20. **Simulate a Bank Transaction System**
     ### To-Do:
      - Implement a bank transaction system where multiple threads represent users who transfer money between accounts.
@@ -284,8 +302,18 @@
       - Design a rate limiter class that limits the number of requests a user can make within a certain time window (e.g., 10 requests per second).
       - The class should allow concurrent requests from multiple threads and block requests that exceed the allowed limit.
       - Use multithreading and synchronization to ensure thread safety.
-    
 
+23. **Semaphore based Downloadmanager**
+    **Example 1: Downloadmanager**
+    - Build a file downloader application where only 5 downloads can happen in parallel to avoid server overload. 
+    - New download requests should wait using Semaphore. 
+    - Also prioritize certain downloads (VIP,HIGH,MEDIUM,LOW) based on Task Priority
+
+    [DownloadManager](./JavaConcept/src/MultithreadingQuestions/SemaphoreProblem/DownloadManager)
+
+
+24. **CountDown latch Example**
+     ### To-Do:
 
 ---
 
