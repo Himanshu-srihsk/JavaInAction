@@ -2,7 +2,6 @@ package MultithreadingQuestions.CountdownLatch.CustomCountdownLatchImpl;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -22,11 +21,14 @@ public class Main {
 }
 /*
 Main thread waiting for services to start...
-MessageQueueService is starting...
 CacheService is starting...
+MessageQueueService is starting...
 DatabaseService is starting...
 DatabaseService is up!
+Thread-0 decremented latch count, remaining: 2
 CacheService is up!
+Thread-1 decremented latch count, remaining: 1
 MessageQueueService is up!
+Thread-2 decremented latch count, remaining: 0
 All services are up. Application is starting...
  */

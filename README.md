@@ -123,7 +123,7 @@
     - Define an annotation @Questions that can be applied to methods:
     - it contains attributes like topic and difficulty 
     - Filter the Questions dynamically at run time based on topic or difficulty level provided
-
+    [QuestionBankFilter](./JavaConcept/src/Reflection_and_Annotations/QuestionBankFilter)
 
 ---
 
@@ -212,8 +212,13 @@
     
       [ParallelFileSearch](./JavaConcept/src/MultithreadingQuestions/ParallelFileSearch)
 
-12. **PriorityTaskScheduler**
-    ### To-Do:
+12. **TaskScheduler**
+    **Examples1: PriorityTaskScheduler **:
+    - There could be multiple tasks. Each task has starttime , duration , priority
+    - Only tasks whose start time has arrived go into the ready queue
+    - If more tasks are ready than free threads, workers always pick the highest-priority ones
+    - Tasks that waited in the ready queue get a bit of fairness i.e .older ones of same priority go first
+      [PriorityTaskScheduler](./JavaConcept/src/MultithreadingQuestions/TaskScheduler/PriorityTaskScheduler)
 
 13. **ThreadSafeCachewithExpiryMechanism**
     - Thread-safe Cache with Expiry Mechanism 
@@ -262,7 +267,7 @@
         
        [CyclicBarrierEx1](./JavaConcept/src/MultithreadingQuestions/CyclicBarrierWithCustomActions/CyclicBarrierEx1)
     
-    **Example 1: Custom Cyclic Barrier Implementaion**
+    **Example 2: Custom Cyclic Barrier Implementaion**
        - Implement a Cyclic Barrier with Custom Actions 
        - Build a custom version of CyclicBarrier that allows threads to wait at a barrier until a certain number of threads reach it. 
        - Add a feature where, once the barrier is reached, a specified action (ex: printing a message or resetting some variables) is performed.
@@ -273,7 +278,7 @@
       - Suppose you are processing a large file in multiple chunks using 4 threads. 
       - each thread finishes processing its chunk, Performs Map phase -> build a local Map<String, Integer> word To Count while Ignores stop words
       - all threads must synchronize to combine the results or proceed to the next stage together i.e. to perform reduce Phase. A CyclicBarrier ensures all threads reach this merge point before moving on.
-      - The barrier’s action combines all partial maps → performs Reduce phase and output map sorted by count in desc
+      - The barrier’s action combines all partial maps -> performs Reduce phase and output map sorted by count in desc
         
       [MapReduceWithCyclicBarrier](./JavaConcept/src/MultithreadingQuestions/CyclicBarrierWithCustomActions/MapReduceWithCyclicBarrier)
 
@@ -313,7 +318,38 @@
 
 
 24. **CountDown latch Example**
-     ### To-Do:
+    
+    **Example 1: CountDownLatch example**
+    - Implement a CountDownLatch with Custom Actions
+    
+    [CountdownLatch](./JavaConcept/src/MultithreadingQuestions/CountdownLatch/Example1)
+
+    **Example 2: Custom CountDownLatch Implementaion**
+    - Implement a CountDownLatch with Custom Actions
+    - Build a custom version of CountDownLatch that allows threads to wait  until a set of operations being performed in other threads completes.
+    - Add a feature where, once the latch count is 0, a specified action (ex: printing a message) is performed.
+
+    [CustomCountdownLatchImpl](./JavaConcept/src/MultithreadingQuestions/CountdownLatch/CustomCountdownLatchImpl)
+
+
+25. **MatrixRelatedQuestions**
+
+    **Example 1: Find the Maximum Element in a Matrix Using Multiple Threads**
+        - Read matrix dimensions M (rows) and N (columns) to build the matrix. 
+        - Read the number of worker threads to use.
+        - Approach 1 :- using Executor Service + callable.
+        - Approach 2 :- Executor Service + CountDown latch + Thread equals matrix length.
+        - Approach 3 :- Cyclic Barrier + Thread equals matrix length.
+
+       [MatrixMaximumElementFinder](./JavaConcept/src/MultithreadingQuestions/MatrixRelatedQuestions/HighestNumber)
+
+    **Example 2: Matrix Multiplication using multiple threads concurrently**
+        - matrix A is M * N
+          matrix  B is N * P
+          Result matrix C is M * P
+        - Read the number of worker threads to use.
+    [BuildParallelMatrixMultiplication](./JavaConcept/src/MultithreadingQuestions/MatrixRelatedQuestions/BuildParallelMatrixMultiplication)
+
 
 ---
 
@@ -427,6 +463,7 @@
     - Additionally, calculate the total price of the filtered products using the **Visitor pattern.** 
     - The system should support flexible combinations of filter conditions (AND, OR) and be open for future enhancements like discount logic,
       new filters, or operations.
+      [EcommerceFilter](./JavaConcept/src/LowLevelDesign/EcommerceFilterDemo)
 
 ---
 # Java8 Stream

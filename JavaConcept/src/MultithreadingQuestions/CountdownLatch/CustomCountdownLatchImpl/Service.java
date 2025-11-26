@@ -1,6 +1,5 @@
 package MultithreadingQuestions.CountdownLatch.CustomCountdownLatchImpl;
 
-import java.util.concurrent.CountDownLatch;
 
 public class Service implements Runnable{
     private final String name;

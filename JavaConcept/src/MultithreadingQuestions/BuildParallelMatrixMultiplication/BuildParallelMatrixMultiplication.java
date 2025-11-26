@@ -1,4 +1,0 @@
-package MultithreadingQuestions.BuildParallelMatrixMultiplication;
-
-public class BuildParallelMatrixMultiplication {
-}
