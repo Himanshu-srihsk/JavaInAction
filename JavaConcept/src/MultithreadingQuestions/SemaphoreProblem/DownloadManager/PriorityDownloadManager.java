@@ -8,74 +8,58 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class PriorityDownloadManager {
     private volatile Semaphore semaphore;
-    private ExecutorService executorService = Executors.newCachedThreadPool();
+    private ThreadPoolExecutor executor;
     private ReentrantLock resizeLock = new ReentrantLock();
-    private final PriorityBlockingQueue<DownloadTask> taskPriorityBlockingQueue = new PriorityBlockingQueue<>();
-    int maxConcurrentDownloads;
+    private final AtomicInteger maxConcurrentDownloads;
     private final AtomicInteger activeDownloads = new AtomicInteger(0);
     private final AtomicInteger peakConcurrentDownloads = new AtomicInteger(0);
 
     public PriorityDownloadManager(int maxConcurrentDownloads){
-        this.maxConcurrentDownloads = maxConcurrentDownloads;
-        this.semaphore = new Semaphore(this.maxConcurrentDownloads,true);
-        startDispatcher();
+        this.maxConcurrentDownloads = new AtomicInteger(maxConcurrentDownloads);
+        this.semaphore = new Semaphore(maxConcurrentDownloads,true);
+        this.executor = new ThreadPoolExecutor(
+                10,
+                10,
+                0L,
+                TimeUnit.MILLISECONDS,
+                new PriorityBlockingQueue<>()
+        );
     }
-    private void startDispatcher(){
-        executorService.submit(()->{
-            while (true){
-                try {
-                    DownloadTask task = taskPriorityBlockingQueue.take();
-                    semaphore.acquire();
 
-                    executorService.submit(()->{
-                        try {
-                          System.out.println("Downloading Task :"+task.fileName+" [Priority:"+task.priority +"]");
+    public void submitDownload(String fileName, Priority priority, long durationMillis) {
+        DownloadTask task = new DownloadTask(
+                fileName,
+                durationMillis,
+                priority,
+                semaphore,
+                activeDownloads,
+                peakConcurrentDownloads
+        );
 
-                          Callable<Void> downloadCallable = () -> {
-                              int running = activeDownloads.incrementAndGet();
-                              peakConcurrentDownloads.updateAndGet(p -> Math.max(p,running));
-                              try {
-                                  Thread.sleep(task.downloadTimeMillis);
-                                  System.out.println("Completed Task :"+ task.fileName);
-                              }finally {
-                                  activeDownloads.decrementAndGet();
-                              }
-                              return null;
-                          };
-                          Future<?> future = executorService.submit(downloadCallable);
-                          future.get(5, TimeUnit.SECONDS);
-                        }catch (TimeoutException e) {
-                            System.out.println("Timeout. Cancelling "+ task.fileName);
-                        }catch (Exception e){
-                            System.out.println("Failed: "+ e.getMessage());
-                        }finally {
-                            semaphore.release();
-                        }
-                    });
-
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
-    }
-    public void submitDownload(String fileName, Priority priority,long millisec){
-        taskPriorityBlockingQueue.put(new DownloadTask(fileName,millisec, priority));
+        executor.execute(task);
     }
     public void resizePool(int newMaxConcurrentDownloads){
+
+
         resizeLock.lock();
         try {
-            int usedPermits = maxConcurrentDownloads - semaphore.availablePermits();
-            int newAvailablePermits = Math.max(newMaxConcurrentDownloads-usedPermits,0);
-            this.semaphore = new Semaphore(newAvailablePermits,true);
-            this.maxConcurrentDownloads = newMaxConcurrentDownloads;
+            int oldMax = this.maxConcurrentDownloads.get();
+            if(newMaxConcurrentDownloads <= oldMax){
+                System.out.println("only increase allowed");
+                return;
+            }
+            int diff = newMaxConcurrentDownloads - oldMax;
+            semaphore.release(diff);
+            maxConcurrentDownloads.set(newMaxConcurrentDownloads);
             System.out.println("Pool resized to "+newMaxConcurrentDownloads+" downloads");
+
+
         }finally {
             resizeLock.unlock();
         }
     }
     public void shutdown(){
-        executorService.shutdownNow();
+        executor.shutdownNow();
     }
     public int getPeakConcurrentDownloads(){
         return peakConcurrentDownloads.get();
@@ -83,3 +67,51 @@ public class PriorityDownloadManager {
 
 
 }
+
+/*
+Ex:
+Total tasks submitted: 100
+ThreadPool size: 10
+Semaphore permits: 3
+
+->
+User submit (100 tasks)
+ThreadPoolExecutor
+     ->  10 worker threads
+     -> PriorityBlockingQueue (remaining tasks)
+Worker thread picks task
+Each of the 10 worker threads does: semaphore.acquire()
+Since permits = 3:
+First 3 threads succeed
+Remaining 7 threads BLOCK at acquire()
+Download runs
+semaphore.release()
+
+Suppose 1 download completes:
+Now:
+One of the 7 blocked threads wakes up
+That thread continues running its task
+Active downloads still = 3
+So concurrency never exceeds 3.
+
+
+
+After Some Tasks Finish
+Eventually:
+Some of the original 10 threads finish
+They go back to thread pool
+They pick next tasks from PriorityBlockingQueue
+They always pick the highest priority task available
+
+
+so
+
+when VIP Task Arrives Late?
+Lets say:
+90 LOW tasks waiting
+VIP task comes
+It gets inserted into queue at top position.
+When any worker thread becomes free:
+It picks VIP first.
+
+ */

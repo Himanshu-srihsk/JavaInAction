@@ -375,7 +375,6 @@ public class JavaStream {
          }
 
          System.out.println("\nEmployees with age 30:");
-
          Map<Integer, List<Employee>> mp = employees.stream().collect(Collectors.groupingBy((Employee emp) -> emp.age));
 
          mp.forEach((key,value) -> {

@@ -1,5 +1,7 @@
 package MultithreadingQuestions.ThreadSafeSingletonPattern;
 
+import java.lang.reflect.Executable;
+
 public class User {
     String name;
     int age;
@@ -21,7 +23,6 @@ public class User {
     public int getAge() {
         return age;
     }
-
     @Override
     public String toString() {
         return "User{" +
