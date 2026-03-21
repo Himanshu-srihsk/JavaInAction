@@ -127,6 +127,10 @@ public class Main {
         System.out.println("Sum of arr ="+sumArr+" secondHighest ="+secondHighest);
         //Sum of arr =24 secondHighest =7
 
+        String temp = "himanshu";
+        String ans = Stream.of(temp.toCharArray()).map(chars -> {Arrays.sort(chars); return new String(chars);}).collect(Collectors.joining());
+        System.out.println(ans);
+
     }
 
 }

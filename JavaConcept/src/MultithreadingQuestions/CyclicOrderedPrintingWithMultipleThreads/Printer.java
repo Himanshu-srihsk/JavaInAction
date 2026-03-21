@@ -28,6 +28,10 @@ public class Printer implements Runnable{
                 while(this.currentPrinter.getPrinterType() != this.sharedPrinterType.get()){
                     try {
                         lock.wait();
+                        /*
+                        Yahan lock release ho jayega!
+                        Jab notify milega, tabhi yahan se aage badhega
+                         */
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }

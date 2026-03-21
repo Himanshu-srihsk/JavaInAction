@@ -10,6 +10,7 @@ Extend the solution to make the counter thread-safe without using synchronized.
 * */
 public class MultithreadedCounter {
     public static void main(String[] args) {
+
         System.out.println(Thread.currentThread().getName() + " started");
         Counter c =Counter.getInstance();
         int numThreads = 2;

@@ -213,12 +213,21 @@
       [ParallelFileSearch](./JavaConcept/src/MultithreadingQuestions/ParallelFileSearch)
 
 12. **TaskScheduler**
+    
     **Examples1: PriorityTaskScheduler **:
     - There could be multiple tasks. Each task has starttime , duration , priority
     - Only tasks whose start time has arrived go into the ready queue
     - If more tasks are ready than free threads, workers always pick the highest-priority ones
     - Tasks that waited in the ready queue get a bit of fairness i.e .older ones of same priority go first
       [PriorityTaskScheduler](./JavaConcept/src/MultithreadingQuestions/TaskScheduler/PriorityTaskScheduler)
+
+    **Examples2: PriorityTaskScheduler **:
+    - Design and implement a Task Scheduler System that can schedule and execute tasks with different scheduling strategies.
+    - Task Types ->
+      One-time task -> Runs once at a given time.
+      Fixed Delay task -> Next execution starts after previous execution finishes + delay
+      Fixed Rate task -> Runs at a fixed interval regardless of execution time
+      [TaskSchedulerSystem](./JavaConcept/src/MultithreadingQuestions/TaskScheduler/TaskSchedulerSystem)
 
 13. **ThreadSafeCachewithExpiryMechanism**
     - Thread-safe Cache with Expiry Mechanism 
@@ -303,10 +312,10 @@
     - Use multiple threads to speed up the crawling process and implement a throttling mechanism to avoid overloading the server.
 
 22.  **Implement a Rate Limiter**
-     ### To-Do:
       - Design a rate limiter class that limits the number of requests a user can make within a certain time window (e.g., 10 requests per second).
       - The class should allow concurrent requests from multiple threads and block requests that exceed the allowed limit.
       - Use multithreading and synchronization to ensure thread safety.
+     [rateLimiter](./JavaConcept/src/MultithreadingQuestions/RateLimiter)
 
 23. **Semaphore based Downloadmanager**
     **Example 1: Downloadmanager**
@@ -369,7 +378,12 @@
       [TaskPipeline](./JavaConcept/src/LowLevelDesign/TaskPipeline)
    
 3. **Json Parser**
-   ### To-Do:
+    -  Features Required:
+    - Parse JSON: Read and interpret JSON data. 
+    - Handle Different Types: Support various data types (string, number, boolean, array, object, null). 
+    - Nested Structures: Support nested JSON structures. 
+    - Flexible Parsing: Allow parsing of partial JSON data.
+       [JsonParser](./JavaConcept/src/LowLevelDesign/JsonParser)
 
 
 4. **Custom Generic HashMap Implementation**
@@ -473,3 +487,9 @@
 
 2. Java Stream part 2
    [JavaStream2](./JavaConcept/src/Stream/JavaStream2)
+
+3. Java Stream part 3
+      [JavaStream3](./JavaConcept/src/Stream/JavaStream3)
+
+4. Java Stream part 4
+      [JavaStream4](./JavaConcept/src/Stream/JavaStream4)

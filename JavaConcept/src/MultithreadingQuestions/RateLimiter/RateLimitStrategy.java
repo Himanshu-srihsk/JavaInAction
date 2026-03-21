@@ -1,5 +1,5 @@
 package MultithreadingQuestions.RateLimiter;
 
-public interface RateLimiter {
+public interface RateLimitStrategy {
     boolean allowRequest(String clientId);
 }

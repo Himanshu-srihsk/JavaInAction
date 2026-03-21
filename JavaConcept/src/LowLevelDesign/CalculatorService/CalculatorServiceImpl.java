@@ -14,8 +14,10 @@ public class CalculatorServiceImpl {
        }
 
       // String expression = "2 + 3 - 4 * ( 5 / 2 ) * ( 3 - 4 ) + 3";
-       String expression = "2 + 3 - 4 * ( 5 / 2 ) + sin ( 30 )";
+       String expression = "2 + 3 - 4 * ( 5 / 2 ) + sin ( 30 ) + 1 / 2";
        // String expression = "2+ 3 - 4 * (5 / 2 ) * (3 - 4) + 3";
+
+       // String expression = "2 + 3 - 4 * ( 5 / 2 ) + sin 30";
         try {
             Command command1 = ExpressionParser.parse(expression);
             double result = command1.execute();
