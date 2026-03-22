@@ -221,7 +221,7 @@
     - Tasks that waited in the ready queue get a bit of fairness i.e .older ones of same priority go first
       [PriorityTaskScheduler](./JavaConcept/src/MultithreadingQuestions/TaskScheduler/PriorityTaskScheduler)
 
-    **Examples2: PriorityTaskScheduler **:
+    **Examples2: TaskSchedulerSystem **:
     - Design and implement a Task Scheduler System that can schedule and execute tasks with different scheduling strategies.
     - Task Types ->
       One-time task -> Runs once at a given time.
@@ -344,6 +344,7 @@
 25. **MatrixRelatedQuestions**
 
     **Example 1: Find the Maximum Element in a Matrix Using Multiple Threads**
+        
         - Read matrix dimensions M (rows) and N (columns) to build the matrix. 
         - Read the number of worker threads to use.
         - Approach 1 :- using Executor Service + callable.
@@ -353,6 +354,7 @@
        [MatrixMaximumElementFinder](./JavaConcept/src/MultithreadingQuestions/MatrixRelatedQuestions/HighestNumber)
 
     **Example 2: Matrix Multiplication using multiple threads concurrently**
+        
         - matrix A is M * N
           matrix  B is N * P
           Result matrix C is M * P
@@ -421,7 +423,8 @@
     - Calculator service evaluates mathematical expressions with support for basic operations (+, -, *, /) 
     - trigonometric functions (e.g., sin, cos), and parentheses.
     - Used Command and Interpreter design patterns for flexibility and extensibility
-      [CalculatorService](./JavaConcept/src/LowLevelDesign/CalculatorService)
+    
+    [CalculatorService](./JavaConcept/src/LowLevelDesign/CalculatorService)
 
 13. **Snake and Ladder**
     ### To-Do:
@@ -433,7 +436,11 @@
     ### To-Do:
 
 16. **File and Directory System**
-    ### To-Do:
+     - Design and implement a file search system that can search files within a hierarchical directory structure using multiple filters. 
+     - The system should support files and directories, where directories can contain files and other directories,
+       forming a tree structure similar to a real file system.
+
+    [FileAndDirectorySystem](./JavaConcept/src/LowLevelDesign/FileAndDirectorySystem)
 
 17. **Meeting Room Booking Service**
     ### To-Do:
@@ -460,8 +467,13 @@
     ### To-Do:
 
 25. **Quad Tree Design implemetation**
-    ### To-Do:
-
+    - Design and implement a QuadTree-based spatial indexing system to store and query points in a two-dimensional coordinate space.
+    - FR:
+      1. Insert a Point
+      2. Given a rectangular region, return all points located inside that region.
+      3. Given a point, determine which smallest sub-region (leaf node) of the QuadTree contains the point
+    
+    [QuadTreeImpl](./JavaConcept/src/LowLevelDesign/QuadTreeImpl)
 26. **Design Torrent**
     ### To-Do:
 
@@ -477,7 +489,22 @@
     - Additionally, calculate the total price of the filtered products using the **Visitor pattern.** 
     - The system should support flexible combinations of filter conditions (AND, OR) and be open for future enhancements like discount logic,
       new filters, or operations.
-      [EcommerceFilter](./JavaConcept/src/LowLevelDesign/EcommerceFilterDemo)
+    
+    [EcommerceFilter](./JavaConcept/src/LowLevelDesign/EcommerceFilterDemo)
+
+30. **ATM Service**
+    - Design and implement an ATM Service Which uses StateDesign Pattern for ATM Life Cycle (State Management) & Chain of responsibility for Cash Withdrawal Logic
+      
+    [AtmService](./JavaConcept/src/LowLevelDesign/AtmService)
+
+31. **CallCenter Service**
+    - Handle incoming customer calls. 
+    - Assign calls to available agents. 
+    - Queue calls if all agents are busy. 
+    - Track call status and history. 
+    - Enable agent-customer interactions (e.g., ending or transferring calls)
+
+    [CallCenterApp](./JavaConcept/src/LowLevelDesign/CallCenterApp)
 
 ---
 # Java8 Stream
