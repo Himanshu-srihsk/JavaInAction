@@ -427,10 +427,12 @@
     [CalculatorService](./JavaConcept/src/LowLevelDesign/CalculatorService)
 
 13. **Snake and Ladder**
-    ### To-Do:
+    
+     [SnakeAndLadder](./JavaConcept/src/LowLevelDesign/SnakeAndLadder)
 
 14. **Tic Tace Toe**
-    ### To-Do:
+    
+     [TicTacToe](./JavaConcept/src/LowLevelDesign/TicTacToe)
 
 15. **Design Logging System**
     - uses singleton + chain of Responsibility + Observer Pattern 
@@ -466,7 +468,12 @@
     ### To-Do:
 
 22. **Design Consistent Hashing**
-    ### To-Do:
+    - Implement a Consistent Hashing Ring using a sorted data structure (like a TreeMap) to represent a circular hash space. 
+    - Map both servers (via multiple hash points/replicas) and keys onto this ring. 
+    - For any given key, find the "closest" server in a clockwise direction
+    - Serve the get and put operations
+
+    [ConsistentHashing](./JavaConcept/src/LowLevelDesign/ConsistentHashing)
 
 23. **Design Google Authenticator**
     ### To-Do:
@@ -489,7 +496,15 @@
     ### To-Do:
 
 28. **Design Traffic Signal System**
-    ### To-Do:
+     - Cars (threads) wait at red light 
+     - Controller periodically gives green signal to specific directions.
+     - Constraints: Car Coming from ..
+    
+            NORTH -> goes straight to SOUTH
+            SOUTH -> goes straight to NORTH
+            EAST -> goes straight to WEST
+            WEST -> goes straight to EAST
+    [TrafficSignalSystem](./JavaConcept/src/LowLevelDesign/TrafficSignalSystem)
 
 29. **Ecommerce Filter and Pricing Logic**
     - Design an extensible filtering system for an e-commerce platform that allows dynamic filtering of products 
