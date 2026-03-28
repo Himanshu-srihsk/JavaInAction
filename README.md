@@ -433,7 +433,15 @@
     ### To-Do:
 
 15. **Design Logging System**
-    ### To-Do:
+    - uses singleton + chain of Responsibility + Observer Pattern 
+    - Design a logging system with the following requirements:
+      - The system should support multiple log levels: INFO ,DEBUG, ERROR 
+      - Logs should be routed based on log level. 
+      - The system should support multiple output channels such as: Console, File ,(Extensible for future like DB, Kafka, etc.)
+      - Different output channels may subscribe to different log levels. 
+      - The logger should be implemented as a Singleton. 
+    - The design should follow SOLID principles and be extensible
+      [LoggingSystem](./JavaConcept/src/LowLevelDesign/LoggingSystem)
 
 16. **File and Directory System**
      - Design and implement a file search system that can search files within a hierarchical directory structure using multiple filters. 
@@ -506,6 +514,13 @@
 
     [CallCenterApp](./JavaConcept/src/LowLevelDesign/CallCenterApp)
 
+32. **InMemory MySql Db Implementation**
+
+    [MysqlDbExample](./JavaConcept/src/LowLevelDesign/MysqlDbExample)
+
+33. **InMemory NoSql Db Implementation**
+    
+     [NoSqlDbExample](./JavaConcept/src/LowLevelDesign/NoSqlDbExample)
 ---
 # Java8 Stream
 
