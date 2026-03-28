@@ -1,0 +1,136 @@
+package LowLevelDesign.SnakeAndLadder;
+
+public class Main {
+    public static void main(String[] args) {
+        Game obj=new Game();
+        obj.startGame();
+    }
+}
+/*
+Player turn is p1 current position is: 0
+Player turn is p1 new position is 4
+Player turn is p2 current position is: 0
+Player turn is p2 new position is 3
+Player turn is p1 current position is: 4
+Player turn is p1 new position is 10
+Player turn is p2 current position is: 3
+Player turn is p2 new position is 9
+Player turn is p1 current position is: 10
+Player turn is p1 new position is 11
+Player turn is p2 current position is: 9
+Player turn is p2 new position is 14
+Player turn is p1 current position is: 11
+Player turn is p1 new position is 13
+Player turn is p2 current position is: 14
+Player turn is p2 new position is 17
+Player turn is p1 current position is: 13
+Player turn is p1 new position is 16
+Player turn is p2 current position is: 17
+Player turn is p2 new position is 23
+Player turn is p1 current position is: 16
+Player turn is p1 new position is 20
+Player turn is p2 current position is: 23
+Player turn is p2 new position is 25
+Player turn is p1 current position is: 20
+Player turn is p1 new position is 23
+Player turn is p2 current position is: 25
+Player turn is p2 new position is 30
+Player turn is p1 current position is: 23
+Player turn is p1 new position is 27
+Player turn is p2 current position is: 30
+Player turn is p2 new position is 36
+Player turn is p1 current position is: 27
+Player turn is p1 new position is 29
+Player turn is p2 current position is: 36
+Player turn is p2 new position is 37
+Player turn is p1 current position is: 29
+Player turn is p1 new position is 31
+Player turn is p2 current position is: 37
+Player turn is p2 new position is 38
+Player turn is p1 current position is: 31
+Player turn is p1 new position is 35
+Player turn is p2 current position is: 38
+Player turn is p2 new position is 42
+Player turn is p1 current position is: 35
+Player turn is p1 new position is 38
+Player turn is p2 current position is: 42
+Player turn is p2 new position is 43
+Player turn is p1 current position is: 38
+Player turn is p1 new position is 40
+Player turn is p2 current position is: 43
+Player turn is p2 new position is 49
+Player turn is p1 current position is: 40
+Player turn is p1 new position is 43
+Player turn is p2 current position is: 49
+Player turn is p2 new position is 54
+Player turn is p1 current position is: 43
+Player turn is p1 new position is 44
+Player turn is p2 current position is: 54
+Player turn is p2 new position is 59
+Player turn is p1 current position is: 44
+Player turn is p1 new position is 47
+Player turn is p2 current position is: 59
+Player turn is p2 new position is 60
+Player turn is p1 current position is: 47
+jump done by : snake
+Player turn is p1 new position is 22
+Player turn is p2 current position is: 60
+Player turn is p2 new position is 62
+Player turn is p1 current position is: 22
+Player turn is p1 new position is 23
+Player turn is p2 current position is: 62
+Player turn is p2 new position is 68
+Player turn is p1 current position is: 23
+Player turn is p1 new position is 29
+Player turn is p2 current position is: 68
+Player turn is p2 new position is 74
+Player turn is p1 current position is: 29
+Player turn is p1 new position is 31
+Player turn is p2 current position is: 74
+Player turn is p2 new position is 80
+Player turn is p1 current position is: 31
+Player turn is p1 new position is 35
+Player turn is p2 current position is: 80
+Player turn is p2 new position is 81
+Player turn is p1 current position is: 35
+Player turn is p1 new position is 38
+Player turn is p2 current position is: 81
+jump done by : snake
+Player turn is p2 new position is 76
+Player turn is p1 current position is: 38
+Player turn is p1 new position is 41
+Player turn is p2 current position is: 76
+Player turn is p2 new position is 80
+Player turn is p1 current position is: 41
+Player turn is p1 new position is 42
+Player turn is p2 current position is: 80
+Player turn is p2 new position is 85
+Player turn is p1 current position is: 42
+Player turn is p1 new position is 43
+Player turn is p2 current position is: 85
+Player turn is p2 new position is 87
+Player turn is p1 current position is: 43
+Player turn is p1 new position is 44
+Player turn is p2 current position is: 87
+Player turn is p2 new position is 90
+Player turn is p1 current position is: 44
+Player turn is p1 new position is 50
+Player turn is p2 current position is: 90
+Player turn is p2 new position is 91
+Player turn is p1 current position is: 50
+Player turn is p1 new position is 55
+Player turn is p2 current position is: 91
+Player turn is p2 new position is 92
+Player turn is p1 current position is: 55
+Player turn is p1 new position is 59
+Player turn is p2 current position is: 92
+Player turn is p2 new position is 96
+Player turn is p1 current position is: 59
+Player turn is p1 new position is 62
+Player turn is p2 current position is: 96
+Player turn is p2 new position is 98
+Player turn is p1 current position is: 62
+Player turn is p1 new position is 68
+Player turn is p2 current position is: 98
+Player turn is p2 new position is 99
+ */
