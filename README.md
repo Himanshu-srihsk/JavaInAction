@@ -401,7 +401,8 @@
    ### To-Do:
 
 7. **Vending Machine**
-   ### To-Do:
+
+   [VendingMachine](./JavaConcept/src/LowLevelDesign/VendingMachine)
 
 8. **TV**
    - TV State Management System using State Design Pattern
@@ -453,7 +454,12 @@
     [FileAndDirectorySystem](./JavaConcept/src/LowLevelDesign/FileAndDirectorySystem)
 
 17. **Meeting Room Booking Service**
-    ### To-Do:
+     - Design a meeting room booking system (like Microsoft Outlook) where users can search rooms by time,
+       capacity, and amenities, and book or cancel meetings. 
+     - The system must prevent overlapping bookings and handle concurrent requests safely. 
+     - It should also support recurring meetings (daily/weekly) and allow listing bookings for a room on a given date. 
+     - The design should be scalable, extensible, and follow SOLID principles.
+    [MeetingRoomBookingService](./JavaConcept/src/LowLevelDesign/MeetingRoomBookingService)
 
 18. **Locker Management System**
     ### To-Do:
