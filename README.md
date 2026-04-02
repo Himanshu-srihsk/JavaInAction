@@ -398,7 +398,7 @@
       [CacheDesignImpl](./JavaConcept/src/LowLevelDesign/CacheDesignImpl)
 
 6. **Splitwise app**
-   ### To-Do:
+   [SplitwiseApp](./JavaConcept/src/LowLevelDesign/SplitwiseApp)
 
 7. **Vending Machine**
 
@@ -409,7 +409,8 @@
      [TV](./JavaConcept/src/LowLevelDesign/TV)
 
 9. **Book My show**
-   ### To-Do:
+   - Movie ticket Booking
+   [BookMyShow](./JavaConcept/src/LowLevelDesign/BookMyShow)
 
 10. **Elevator**
     ### In Progress:
@@ -482,7 +483,7 @@
     [ConsistentHashing](./JavaConcept/src/LowLevelDesign/ConsistentHashing)
 
 23. **Design Google Authenticator**
-    ### To-Do:
+    [GoogleAuthenticator](./JavaConcept/src/LowLevelDesign/GoogleAuthenticator)
 
 24. **Design Music Stream service**
     ### To-Do:
