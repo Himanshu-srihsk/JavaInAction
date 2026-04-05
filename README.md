@@ -367,8 +367,8 @@
 # Low-Level Design
 
 1. **Parking Lot System**
-   ### To-Do:
     - Design a parking lot system with classes, relationships, and actions for managing parking and vehicle retrieval.
+      [ParkingLotSystem](./JavaConcept/src/LowLevelDesign/ParkingLotSystem)
 
 
 2. **Task Pipeline**
@@ -418,7 +418,7 @@
        [Elevator](./JavaConcept/src/LowLevelDesign/Elevator)
 
 11. **Cricbuzz live score**
-    ### To-Do:
+    [Cricbuzz](./JavaConcept/src/LowLevelDesign/Cricbuzz)
 
 12. **Calculator Service**
     - Advanced Calculator Service with Support for Basic and Scientific Operations
@@ -471,8 +471,8 @@
 20. **Design Twitter LLD**
     ### To-Do:
 
-21. **Design Online Code Platform**
-    ### To-Do:
+21. **Load Balancer Implementation**
+    [LoadBalancer](./JavaConcept/src/LowLevelDesign/LoadBalancer)
 
 22. **Design Consistent Hashing**
     - Implement a Consistent Hashing Ring using a sorted data structure (like a TreeMap) to represent a circular hash space. 
