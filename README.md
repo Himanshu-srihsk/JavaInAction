@@ -497,7 +497,8 @@
     
     [QuadTreeImpl](./JavaConcept/src/LowLevelDesign/QuadTreeImpl)
 26. **Design Torrent**
-    ### To-Do:
+
+    [Torrent](./JavaConcept/src/LowLevelDesign/Torrent)
 
 27. **Design Online Code Platform**
     ### To-Do:
