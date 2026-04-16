@@ -544,6 +544,13 @@
 33. **InMemory NoSql Db Implementation**
     
      [NoSqlDbExample](./JavaConcept/src/LowLevelDesign/NoSqlDbExample)
+
+34. **BootStrap Aggregation Service Example**
+    - Implement a BootstrapService to Aggregate Data from Multiple Services 
+    - Design and implement a BootstrapService that aggregates data from three distinct services ConsumerService, 
+    - PaymentService, and AddressService to construct a comprehensive response for a given userId.
+
+    [BootstrapAggregationService](./JavaConcept/src/LowLevelDesign/BootstrapAggregationService)
 ---
 # Java8 Stream
 
